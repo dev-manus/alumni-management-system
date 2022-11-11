@@ -11,9 +11,8 @@
 ## How to run it?
 
   * Fork the repository.
-  * Clone the repository to your local machine `$ git clone https://github.com/<your-github-username>/alumni.git`
-  * Change directory to alumni `$ cd alumni`
-  * Add a reference to the original repository `$ git remote add upstream https://github.com/Student-Alumni-Connect/alumni.git`
+  * Clone the repository to your local machine `$ git clone https://github.com/<your-github-username>/alumni-management-system.git`
+  * Change directory to alumni `$ cd alumni-management-system`
   * Install virtualenv `$ pip3 install virtualenv`  
   * Create a virtual environment `$ virtualenv env -p python3`
   * Activate the env: `$ source env/bin/activate` (for linux) `> ./env/Scripts/activate` (for Windows PowerShell)
