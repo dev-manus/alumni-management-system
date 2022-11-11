@@ -1,0 +1,46 @@
+{% extends 'globals/base.html' %}
+{% load static %}
+{% load thumbnail %}
+{% block css %}
+<style>
+	.map-container {
+		overflow: hidden;
+		padding-bottom: 56.25%;
+		position: relative;
+		height: 0;
+	}
+
+	.map-container iframe {
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+	}
+</style>
+<link rel="stylesheet" href="{% static 'external/photoswipe/photoswipe.css' %}"> 
+<link rel="stylesheet" href="{% static 'external/photoswipe/default-skin/default-skin.css' %}"> 
+{% endblock %}
+{% block body %}
+{% include 'globals/navbar.html' %}
+<iframe src="https://www.w3schools.com" title="W3Schools Free Online Web Tutorials"></iframe>
+{% include 'globals/init_pwsp.html' %}
+{% include 'globals/footer.html' %}
+
+{% endblock %}
+{% block javascript %}
+    <script>
+        // build the json album images collection 
+        window.djangoAlbumImages = [
+            {% for item in images %}
+                {
+                    src: '{{ item.image.url }}',
+                    w:  {{ item.width }},
+                    h:  {{ item.height }}
+                },
+            {% endfor %}
+        ];
+    </script>
+    <script src="{% static 'external/photoswipe/photoswipe.min.js' %}"></script> 
+    <script src="{% static 'external/photoswipe/photoswipe-ui-default.min.js' %}"></script>
+{% endblock %}
